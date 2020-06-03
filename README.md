@@ -32,3 +32,15 @@ The following Profile
 
 ### Literatur
 [http://cxf.apache.org/docs/springboot.html](http://cxf.apache.org/docs/springboot.html)
+
+### Test Create Object
+```
+curl -X POST "http://localhost:8080/v1/api/stammdaten/test2" -H "accept: */*" -H "Content-Type: application/json" -d "{ \"gueltigBis\": \"2020-06-03T00:00:00\", \"kennung\": \"test\", \"uniqueKey\": \"test\"}"
+```
+
+### Test retrieve
+```
+curl -X GET "http://localhost:8080/v1/api/stammdaten?name=test2" -H "accept: */*"
+```
+
+

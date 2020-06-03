@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collections;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
@@ -62,10 +63,13 @@ public class StammdatenController {
 
         Rahmenvertrag rahmenvertrag = rahmenvertragRepository.findByName(rahmenvertragName);
 
-        if (rahmenvertrag == null) {
+        if (rahmenvertrag != null) {
             throw new StammdatenServiceException();
         }
 
+        rahmenvertrag = new Rahmenvertrag();
+        rahmenvertrag.setName(rahmenvertragName);
+        rahmenvertrag.setTyp(UUID.randomUUID().toString());
         Betriebsstaette bs = new Betriebsstaette();
         bs.setKennung(betriebsstaette.getKennung());
         bs.setUniqueKey(betriebsstaette.getUniqueKey());

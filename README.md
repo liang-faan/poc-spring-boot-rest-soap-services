@@ -12,7 +12,7 @@ Apache CXF provides a dependency:
 <dependency>
     <groupId>org.apache.cxf</groupId>
     <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
-    <version>3.1.11</version>
+    <version>3.3.6</version>
 </dependency>
 ```
 
